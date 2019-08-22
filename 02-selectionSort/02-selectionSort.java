@@ -37,6 +37,5 @@ private static int[] selectionSort(int[] arr) {
 
 	public static void main(String[] args) {
 		int[] arr = { 5, 3, 6, 2, 10 };
-		System.out.println(Arrays.toString(selectionSort(arr))); // [2, 3, 5, 6,
-																	// 10]
+		System.out.println(Arrays.toString(selectionSort(arr))); // [2, 3, 5, 6, 10]
 	}
