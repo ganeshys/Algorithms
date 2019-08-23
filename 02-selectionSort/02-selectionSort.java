@@ -1,42 +1,38 @@
-private static int[] selectionSort(int[] arr) {
-		int[] newArr = new int[arr.length];
+package gu.demo;
 
-		for (int i = 0; i < newArr.length; i++) {
-			int smallestIndex = findSmallest(arr);
-			newArr[i] = arr[smallestIndex];
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-			arr = getNewArrWithoutSmallest(arr, smallestIndex);
-		}
+public class demo1 {
+    private static List<Integer> selectionSort(List<Integer> arr){
+        List<Integer> newArr = new ArrayList<>(arr.size());
 
-		return newArr;
-	}
+        int size = arr.size();
+        for(int i =0;i<size;i++){
+            int smallest = findSmallest(arr);
+            newArr.add(arr.get(smallest));
+            arr.remove(smallest);
+        }
+        return newArr;
+    }
 
-	private static int[] getNewArrWithoutSmallest(int[] arr, int smallestIndex) {
-		int[] newArrWithoutSmallest = new int[arr.length - 1];
-		for (int i = 0; i < arr.length; i++) {
-			if (i < smallestIndex) {
-				newArrWithoutSmallest[i] = arr[i];
-			} else if (i > smallestIndex) {
-				newArrWithoutSmallest[i - 1] = arr[i];
-			}
-		}
-		return newArrWithoutSmallest;
-	}
 
-	private static int findSmallest(int[] arr) {
-		int smallest = arr[0];
-		int smallestIndex = 0;
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] < smallest) {
-				smallest = arr[i];
-				smallestIndex = i;
-			}
-		}
-		return smallestIndex;
-	}
 
-	public static void main(String[] args) {
-		int[] arr = { 5, 3, 6, 2, 10 };
-		System.out.println(Arrays.toString(selectionSort(arr))); // [2, 3, 5, 6,
-																	// 10]
-	}
+    private static int findSmallest(List<Integer> arr){
+        int smallest = arr.get(0);
+        int smallestIndex = 0;
+        for(int i =0;i<arr.size();i++) {
+            smallest = arr.get(i);
+            smallestIndex = i;
+        }
+        return smallestIndex;
+    }
+
+    public static void main(String[] args){
+        List<Integer> arr = new ArrayList<>(Arrays.asList(5,3,6,2,10));
+        System.out.println(selectionSort(arr));
+    }
+
+
+}
