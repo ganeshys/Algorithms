@@ -1,11 +1,4 @@
-package gu.demo;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-public class demo1 {
-    private static List<Integer> selectionSort(List<Integer> arr){
+ private static List<Integer> selectionSort(List<Integer> arr){
         List<Integer> newArr = new ArrayList<>(arr.size());
 
         int size = arr.size();
@@ -34,5 +27,3 @@ public class demo1 {
         System.out.println(selectionSort(arr));
     }
 
-
-}
